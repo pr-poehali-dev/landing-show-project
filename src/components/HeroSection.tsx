@@ -113,7 +113,7 @@ export default function HeroSection({ heroVisible, scrollTo, onVideoOpen }: Hero
             {/* Stats */}
             <div className="flex gap-8 mt-10 pt-8 border-t border-white/10">
               {[
-                { val: "2h 30min", label: "Продолжительность" },
+                { val: "2h 45min", label: "Продолжительность" },
                 { val: "16+", label: "Возраст" },
                 { val: "Гастроли", label: "Формат" },
               ].map((s) => (
