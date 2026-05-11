@@ -51,24 +51,18 @@ export default function GallerySection({ onLightbox, onVideoOpen }: GallerySecti
         {/* Трейлер 2 */}
         <div className="mt-12">
           <div
-            className="relative rounded-2xl overflow-hidden cursor-pointer group mx-auto"
+            className="relative rounded-2xl overflow-hidden mx-auto"
             style={{ maxWidth: 800, aspectRatio: "16/9", background: "#1A1008" }}
-            onClick={onVideoOpen}
           >
-            <img
-              src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=900&h=506&fit=crop"
-              alt="Отрывок"
-              className="w-full h-full object-cover opacity-40 group-hover:opacity-30 transition-opacity"
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://vkvideo.ru/video_ext.php?oid=1107808138&id=456239020&hd=2"
+              title="Отрывок из спектакля 12 стульев"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center"
-                style={{ background: "var(--gold)" }}
-              >
-                <Icon name="Play" size={28} style={{ color: "var(--ink)" }} className="ml-1" />
-              </div>
-              <p className="nav-link text-white text-sm">ОТРЫВОК ИЗ СПЕКТАКЛЯ</p>
-            </div>
           </div>
         </div>
       </div>
