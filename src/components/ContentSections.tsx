@@ -398,12 +398,20 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
                   </p>
                 </div>
 
-                <button
-                  className="btn-red w-full py-4 rounded-xl mt-8 text-base flex items-center justify-center gap-2"
-                >
-                  <span>КУПИТЬ БИЛЕТ</span>
-                  <span style={{ fontSize: "1.1em" }}>→</span>
-                </button>
+                <div className="relative mt-8">
+                  <button
+                    className="btn-red w-full py-4 rounded-xl text-base flex items-center justify-center gap-2"
+                  >
+                    <span>КУПИТЬ БИЛЕТ</span>
+                    <span style={{ fontSize: "1.1em" }}>→</span>
+                  </button>
+                  <span
+                    className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded text-xs font-semibold"
+                    style={{ background: "var(--gold)", color: "var(--ink)", fontFamily: "'Oswald', sans-serif", letterSpacing: "0.05em", whiteSpace: "nowrap" }}
+                  >
+                    без комиссии
+                  </span>
+                </div>
               </div>
             </div>
           </div>
