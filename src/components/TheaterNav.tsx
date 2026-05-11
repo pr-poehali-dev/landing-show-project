@@ -27,12 +27,11 @@ export default function TheaterNav({ scrolled, menuOpen, setMenuOpen, scrollTo }
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-        <span
-          className="section-title text-lg font-bold"
-          style={{ color: "var(--gold)", letterSpacing: "0.15em" }}
-        >
-          12 СТУЛЬЕВ
-        </span>
+        <img
+          src="https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/f0d1d595-7a51-4582-ade0-6260d550bd77.png"
+          alt="12 Стульев — Театр Буфф-Парадиз"
+          style={{ height: 40 }}
+        />
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
