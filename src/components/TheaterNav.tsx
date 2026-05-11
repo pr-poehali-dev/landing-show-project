@@ -28,9 +28,9 @@ export default function TheaterNav({ scrolled, menuOpen, setMenuOpen, scrollTo }
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <img
-          src="https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/f0d1d595-7a51-4582-ade0-6260d550bd77.png"
+          src="https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/aa88088d-200a-4430-af1b-96f18be98392.png"
           alt="12 Стульев — Театр Буфф-Парадиз"
-          style={{ height: 120 }}
+          style={{ height: 48, maxWidth: 280, objectFit: "contain" }}
         />
 
         {/* Desktop nav */}
