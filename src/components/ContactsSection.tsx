@@ -35,7 +35,7 @@ export default function ContactsSection() {
                 {
                   icon: "Phone",
                   title: "Телефон",
-                  text: "+7 (8692) 54-40-01",
+                  text: "+7 (922) 415-44-63",
                 },
                 {
                   icon: "Mail",
