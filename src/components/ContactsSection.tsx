@@ -1,6 +1,36 @@
+import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const SEND_URL = "https://functions.poehali.dev/45f3f68f-956e-40df-bcee-fcbbaeb69c2e";
+
 export default function ContactsSection() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">("idle");
+
+  async function handleSubmit() {
+    if (!name || !email || !message) return;
+    setStatus("loading");
+    try {
+      const res = await fetch(SEND_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (res.ok) {
+        setStatus("ok");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <>
       {/* ── КОНТАКТЫ ── */}
@@ -102,44 +132,75 @@ export default function ContactsSection() {
               >
                 НАПИСАТЬ НАМ
               </h3>
-              <div className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Ваше имя"
-                  className="w-full px-4 py-3 rounded-lg text-sm outline-none focus:ring-2"
-                  style={{
-                    background: "#1A1008",
-                    border: "1px solid rgba(201,168,76,0.3)",
-                    color: "#fff",
-                    fontFamily: "'Golos Text', sans-serif",
-                  }}
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full px-4 py-3 rounded-lg text-sm outline-none focus:ring-2"
-                  style={{
-                    background: "#1A1008",
-                    border: "1px solid rgba(201,168,76,0.3)",
-                    color: "#fff",
-                    fontFamily: "'Golos Text', sans-serif",
-                  }}
-                />
-                <textarea
-                  placeholder="Ваш вопрос..."
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none focus:ring-2"
-                  style={{
-                    background: "#1A1008",
-                    border: "1px solid rgba(201,168,76,0.3)",
-                    color: "#fff",
-                    fontFamily: "'Golos Text', sans-serif",
-                  }}
-                />
-                <button className="btn-red w-full py-4 rounded-lg text-sm">
-                  ОТПРАВИТЬ
-                </button>
-              </div>
+
+              {status === "ok" ? (
+                <div className="text-center py-8">
+                  <p className="text-2xl mb-3">✓</p>
+                  <p className="font-semibold text-white mb-1">Сообщение отправлено!</p>
+                  <p className="text-sm" style={{ color: "rgba(245,237,216,0.5)" }}>Мы свяжемся с вами в ближайшее время</p>
+                  <button
+                    className="mt-6 text-sm underline"
+                    style={{ color: "var(--gold)" }}
+                    onClick={() => setStatus("idle")}
+                  >
+                    Отправить ещё
+                  </button>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  <input
+                    type="text"
+                    placeholder="Ваше имя"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-4 py-3 rounded-lg text-sm outline-none focus:ring-2"
+                    style={{
+                      background: "#1A1008",
+                      border: "1px solid rgba(201,168,76,0.3)",
+                      color: "#fff",
+                      fontFamily: "'Golos Text', sans-serif",
+                    }}
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-3 rounded-lg text-sm outline-none focus:ring-2"
+                    style={{
+                      background: "#1A1008",
+                      border: "1px solid rgba(201,168,76,0.3)",
+                      color: "#fff",
+                      fontFamily: "'Golos Text', sans-serif",
+                    }}
+                  />
+                  <textarea
+                    placeholder="Ваш вопрос..."
+                    rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none focus:ring-2"
+                    style={{
+                      background: "#1A1008",
+                      border: "1px solid rgba(201,168,76,0.3)",
+                      color: "#fff",
+                      fontFamily: "'Golos Text', sans-serif",
+                    }}
+                  />
+                  {status === "error" && (
+                    <p className="text-sm" style={{ color: "var(--red)" }}>
+                      Ошибка отправки. Попробуйте ещё раз.
+                    </p>
+                  )}
+                  <button
+                    className="btn-red w-full py-4 rounded-lg text-sm disabled:opacity-50"
+                    onClick={handleSubmit}
+                    disabled={status === "loading"}
+                  >
+                    {status === "loading" ? "ОТПРАВКА..." : "ОТПРАВИТЬ"}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
