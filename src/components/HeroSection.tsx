@@ -125,7 +125,7 @@ export default function HeroSection({ heroVisible, scrollTo, onVideoOpen }: Hero
               {[
                 { val: "2 ч 45 мин", label: "Продолжительность" },
                 { val: "12+", label: "Возраст" },
-                { val: "Гастроли", label: "Формат" },
+                { val: "Муз. комедия", label: "Жанр" },
               ].map((s) => (
                 <div key={s.label}>
                   <div
