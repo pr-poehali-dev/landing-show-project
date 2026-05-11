@@ -302,9 +302,7 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
               {/* Левая часть — дата и место */}
               <div className="p-8 md:p-10 flex flex-col justify-between" style={{ borderRight: "2px dashed rgba(26,16,8,0.15)" }}>
                 <div>
-                  <p className="nav-link text-xs mb-4" style={{ color: "var(--red)" }}>
-                    СПЕКТАКЛЬ
-                  </p>
+                  <p className="nav-link text-xs mb-4" style={{ color: "var(--red)" }}>МУЗЫКАЛЬНАЯ КОМЕДИЯ В ДВУХ ДЕЙСТВИЯХ</p>
                   <h3
                     className="section-title font-bold mb-1 leading-tight"
                     style={{ fontSize: "clamp(1.6rem, 4vw, 2.4rem)", color: "var(--ink)" }}
