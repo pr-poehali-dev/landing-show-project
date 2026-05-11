@@ -6,6 +6,7 @@ const GALLERY_IMGS = [
   "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/27e32660-81b4-4bc5-b2dc-5a3c3d3d1e62.jpg",
   "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/024a14d3-ca78-48b6-8ec8-c61cd61ed84c.jpg",
   "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/41569933-d78b-4de0-9000-dd6f85ae22c8.jpg",
+  "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/76a518f0-74d4-4a76-b8c0-15018a17de9e.jpeg",
 ];
 
 interface GallerySectionProps {
