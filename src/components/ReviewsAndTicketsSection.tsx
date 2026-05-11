@@ -95,9 +95,7 @@ export default function ReviewsAndTicketsSection() {
                 <p
                   className="text-sm leading-relaxed mb-6"
                   style={{ color: "rgba(245,237,216,0.8)", fontStyle: "italic" }}
-                >
-                  «{r.text}»
-                </p>
+                >«Были на спектакле в Екатеринбурге — зал просто взорвался аплодисментами! Невероятная энергетика.»</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-white/10">
                   <div
                     className="w-9 h-9 rounded-full flex items-center justify-center section-title font-bold text-sm"
