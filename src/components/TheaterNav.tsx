@@ -45,12 +45,20 @@ export default function TheaterNav({ scrolled, menuOpen, setMenuOpen, scrollTo }
               {item.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollTo("#tickets")}
-            className="btn-red px-4 py-2 text-sm font-semibold rounded"
-          >
-            Купить билет
-          </button>
+          <div className="relative inline-block">
+            <button
+              onClick={() => scrollTo("#tickets")}
+              className="btn-red px-4 py-2 text-sm font-semibold rounded"
+            >
+              Купить билет
+            </button>
+            <span
+              className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded text-xs font-semibold"
+              style={{ background: "var(--gold)", color: "var(--ink)", fontFamily: "'Oswald', sans-serif", letterSpacing: "0.05em", whiteSpace: "nowrap" }}
+            >
+              без комиссии
+            </span>
+          </div>
         </div>
 
         {/* Mobile burger */}
