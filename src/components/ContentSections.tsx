@@ -273,7 +273,7 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
             </h2>
             <div className="ornament max-w-xs mx-auto" />
             <p className="mt-6" style={{ color: "#3D2B1A" }}>
-              Севастопольский театр им. А.В. Луначарского
+              Дом офицеров Черноморского флота, ул. Ленина 9, г. Севастополь
             </p>
           </div>
 
@@ -375,7 +375,7 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
                 {
                   icon: "MapPin",
                   title: "Адрес",
-                  text: "Севастополь, пл. Ушакова, 1\nСевастопольский театр им. Луначарского",
+                  text: "ул. Ленина 9, г. Севастополь\nДом офицеров Черноморского флота",
                 },
                 {
                   icon: "Phone",
