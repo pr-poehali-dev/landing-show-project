@@ -399,12 +399,15 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
                 </div>
 
                 <div className="relative mt-8">
-                  <button
+                  <a
+                    href="https://iframeab-pre11992.intickets.ru/seance/72243185/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-red w-full py-4 rounded-xl text-base flex items-center justify-center gap-2"
                   >
                     <span>КУПИТЬ БИЛЕТ</span>
                     <span style={{ fontSize: "1.1em" }}>→</span>
-                  </button>
+                  </a>
                   <span
                     className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded text-xs font-semibold"
                     style={{ background: "var(--gold)", color: "var(--ink)", fontFamily: "'Oswald', sans-serif", letterSpacing: "0.05em", whiteSpace: "nowrap" }}
