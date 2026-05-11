@@ -2,11 +2,11 @@ const F = "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32
 const M = "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/files/e7c348e4-fc4b-47c7-ade2-d10ee355ef26.jpg";
 
 const ACTORS = [
-  { actor: "Анастасия Мельникова", img: F },
-  { actor: "Майя Барковская", img: F },
-  { actor: "Полина Нестерова", img: F },
-  { actor: "Анастасия Фриско", img: F },
-  { actor: "Анастасия Пугина", img: F },
+  { actor: "Анастасия Мельникова", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/bcd8a071-2734-4e94-8c55-478f324b9dfa.jpg" },
+  { actor: "Майя Барковская", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/8295d461-faf9-4620-bfe1-df6dde8befc7.jpg" },
+  { actor: "Полина Нестерова", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/c444a879-b32a-451a-9a75-ef38b27f974c.jpg" },
+  { actor: "Анастасия Фриско", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/3cd7e198-7a0a-43cb-9907-a95e8a40b908.jpg" },
+  { actor: "Анастасия Пугина", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/bfa03439-0b2f-4756-9cae-a1600c9dad9c.jpg" },
   { actor: "Надежда Леньшина-Симутенкова", img: F },
   { actor: "Майя Штылёва", img: F },
   { actor: "Николай Семёнов", img: M },
