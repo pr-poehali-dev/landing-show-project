@@ -1,3 +1,6 @@
+import { useState } from "react";
+import Icon from "@/components/ui/icon";
+
 const REVIEWS = [
   {
     author: "Елена К.",
@@ -17,9 +20,45 @@ const REVIEWS = [
     rating: 5,
     date: "Январь 2024",
   },
+  {
+    author: "Андрей Т.",
+    text: "Были на гастролях в Севастополе — зал просто взорвался аплодисментами! Невероятная энергетика труппы.",
+    rating: 5,
+    date: "Март 2025",
+  },
+  {
+    author: "Наталья В.",
+    text: "Пришла с дочерью — обе в восторге. Костюмы, декорации, музыка — всё на высшем уровне!",
+    rating: 5,
+    date: "Апрель 2025",
+  },
+  {
+    author: "Игорь Р.",
+    text: "Остап Бендер — живой! Такой харизмы на сцене я давно не видел. Браво артистам!",
+    rating: 5,
+    date: "Июнь 2025",
+  },
+  {
+    author: "Светлана Д.",
+    text: "Танго в исполнении главных героев — это что-то невероятное. Зал замер, а потом взревел!",
+    rating: 5,
+    date: "Февраль 2026",
+  },
+  {
+    author: "Михаил П.",
+    text: "Смотрел уже второй раз и снова получил огромное удовольствие. Каждый раз открываешь что-то новое.",
+    rating: 5,
+    date: "Апрель 2026",
+  },
 ];
 
+const PER_PAGE = 3;
+
 export default function ReviewsAndTicketsSection() {
+  const [page, setPage] = useState(0);
+  const total = Math.ceil(REVIEWS.length / PER_PAGE);
+  const visible = REVIEWS.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE);
+
   return (
     <>
       {/* ── ОТЗЫВЫ ── */}
@@ -38,17 +77,16 @@ export default function ReviewsAndTicketsSection() {
             <div className="ornament max-w-xs mx-auto" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {REVIEWS.map((r) => (
+          <div className="grid md:grid-cols-3 gap-6 min-h-[260px]">
+            {visible.map((r) => (
               <div
-                key={r.author}
+                key={r.author + r.date}
                 className="rounded-xl p-6"
                 style={{
                   background: "#1A1008",
                   border: "1px solid rgba(201,168,76,0.2)",
                 }}
               >
-                {/* Stars */}
                 <div className="stars flex gap-1 mb-4">
                   {Array.from({ length: r.rating }).map((_, i) => (
                     <span key={i} style={{ color: "var(--gold)" }}>★</span>
@@ -77,6 +115,41 @@ export default function ReviewsAndTicketsSection() {
               </div>
             ))}
           </div>
+
+          {/* Навигация */}
+          <div className="flex items-center justify-center gap-4 mt-10">
+            <button
+              onClick={() => setPage((p) => Math.max(0, p - 1))}
+              disabled={page === 0}
+              className="w-10 h-10 rounded-full flex items-center justify-center transition-opacity disabled:opacity-30"
+              style={{ background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.3)" }}
+            >
+              <Icon name="ChevronLeft" size={18} className="text-white" />
+            </button>
+
+            <div className="flex gap-2">
+              {Array.from({ length: total }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setPage(i)}
+                  className="w-2 h-2 rounded-full transition-all"
+                  style={{
+                    background: i === page ? "var(--gold)" : "rgba(201,168,76,0.3)",
+                    width: i === page ? "24px" : "8px",
+                  }}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={() => setPage((p) => Math.min(total - 1, p + 1))}
+              disabled={page === total - 1}
+              className="w-10 h-10 rounded-full flex items-center justify-center transition-opacity disabled:opacity-30"
+              style={{ background: "rgba(201,168,76,0.15)", border: "1px solid rgba(201,168,76,0.3)" }}
+            >
+              <Icon name="ChevronRight" size={18} className="text-white" />
+            </button>
+          </div>
         </div>
       </section>
 
@@ -84,7 +157,6 @@ export default function ReviewsAndTicketsSection() {
       <section id="tickets" className="py-24 overflow-hidden" style={{ background: "var(--ink)" }}>
         <div className="max-w-5xl mx-auto px-6">
 
-          {/* Заголовок */}
           <div className="text-center mb-14">
             <p className="nav-link text-sm mb-3" style={{ color: "var(--red)" }}>РАСПИСАНИЕ</p>
             <h2 className="section-title text-4xl md:text-5xl font-bold mb-4" style={{ color: "#fff" }}>
@@ -93,18 +165,15 @@ export default function ReviewsAndTicketsSection() {
             <div className="ornament max-w-xs mx-auto" />
           </div>
 
-          {/* Главный блок — билет */}
           <div
             className="relative rounded-3xl overflow-hidden mx-auto"
             style={{ maxWidth: 860, background: "var(--cream)" }}
           >
-            {/* Декоративная красная полоса слева */}
             <div
               className="absolute left-0 top-0 bottom-0 w-2"
               style={{ background: "var(--red)" }}
             />
 
-            {/* Перфорация */}
             <div
               className="absolute left-0 right-0 flex justify-between px-0 pointer-events-none"
               style={{ top: "50%", transform: "translateY(-50%)" }}
@@ -121,7 +190,6 @@ export default function ReviewsAndTicketsSection() {
             />
 
             <div className="grid md:grid-cols-2">
-              {/* Левая часть — дата и место */}
               <div className="p-8 md:p-10 flex flex-col justify-between" style={{ borderRight: "2px dashed rgba(26,16,8,0.15)" }}>
                 <div>
                   <p className="nav-link text-xs mb-4" style={{ color: "var(--red)" }}>МУЗЫКАЛЬНАЯ КОМЕДИЯ В ДВУХ ДЕЙСТВИЯХ</p>
@@ -139,7 +207,7 @@ export default function ReviewsAndTicketsSection() {
                     <div>
                       <p className="nav-link text-xs mb-1" style={{ color: "var(--red)" }}>ДАТА</p>
                       <p className="display-title font-bold text-3xl" style={{ color: "var(--ink)" }}>18 августа</p>
-                      <p className="text-sm" style={{ color: "#6B4C30" }}>вторник</p>
+                      <p className="text-sm" style={{ color: "#6B4C30" }}>понедельник</p>
                     </div>
                     <div
                       className="w-px self-stretch"
@@ -148,7 +216,7 @@ export default function ReviewsAndTicketsSection() {
                     <div>
                       <p className="nav-link text-xs mb-1" style={{ color: "var(--red)" }}>НАЧАЛО</p>
                       <p className="section-title font-bold text-3xl" style={{ color: "var(--red)" }}>19:00</p>
-                      <p className="text-sm" style={{ color: "#6B4C30" }}>с одним антрактом</p>
+                      <p className="text-sm" style={{ color: "#6B4C30" }}>без антракта</p>
                     </div>
                   </div>
 
@@ -185,7 +253,6 @@ export default function ReviewsAndTicketsSection() {
                 </div>
               </div>
 
-              {/* Правая часть — цена и кнопка */}
               <div
                 className="p-8 md:p-10 flex flex-col justify-between"
                 style={{ background: "var(--ink)" }}
