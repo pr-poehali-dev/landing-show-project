@@ -374,9 +374,7 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
                     <span
                       className="display-title font-bold"
                       style={{ fontSize: "clamp(2.8rem, 6vw, 4.5rem)", color: "#fff", lineHeight: 1 }}
-                    >
-                      1 600
-                    </span>
+                    >1 700</span>
                     <span className="text-2xl mb-1 font-light" style={{ color: "rgba(245,237,216,0.5)" }}>₽</span>
                   </div>
                   <div className="flex items-center gap-2 mb-8">
