@@ -20,7 +20,7 @@ const ACTORS = [
   { actor: "Юрий Ильиных", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/7f68a374-3b8e-4dbd-b970-e38cd7b4ddd8.jpg" },
   { actor: "Александр Миненко", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/51579fb1-48df-41a9-a8ff-1c6151fa948d.jpg" },
   { actor: "Вячеслав Иванов", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/af086b32-fdff-49c3-8d62-a0f9a9bd3c1a.jpg", title: "Заслуженный артист России" },
-  { actor: "Роман Котляров", img: M },
+  { actor: "Роман Котляров", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/b75e6d7e-9a5a-486c-af87-fa9d9e1e165c.jpg" },
   { actor: "Дмитрий Кондратков", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/6910fbc1-d700-466a-8d5f-ff93d5463295.jpg" },
   { actor: "Павел Бадрах", img: "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/ad578499-7a0d-4731-adba-5ed10ad2950f.jpg" },
 ];
