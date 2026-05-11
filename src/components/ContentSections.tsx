@@ -488,6 +488,19 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
               </div>
             </div>
           </div>
+
+          {/* ── MAP ── */}
+          <div className="mt-12 rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(201,168,76,0.2)" }}>
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=33.525123%2C44.616517&z=17&pt=33.525123,44.616517,pm2rdm&text=Дом+офицеров+Черноморского+флота+Севастополь"
+              width="100%"
+              height="340"
+              frameBorder="0"
+              allowFullScreen
+              title="Карта — Дом офицеров ЧФ"
+              style={{ display: "block" }}
+            />
+          </div>
         </div>
       </section>
 
