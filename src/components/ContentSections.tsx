@@ -259,98 +259,159 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
       </section>
 
       {/* ── БИЛЕТЫ ── */}
-      <section id="tickets" className="py-24 paper-bg">
+      <section id="tickets" className="py-24 overflow-hidden" style={{ background: "var(--ink)" }}>
         <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="nav-link text-sm mb-3" style={{ color: "var(--red)" }}>
-              РАСПИСАНИЕ
-            </p>
-            <h2
-              className="section-title text-4xl md:text-5xl font-bold mb-4"
-              style={{ color: "var(--ink)" }}
-            >
+
+          {/* Заголовок */}
+          <div className="text-center mb-14">
+            <p className="nav-link text-sm mb-3" style={{ color: "var(--red)" }}>РАСПИСАНИЕ</p>
+            <h2 className="section-title text-4xl md:text-5xl font-bold mb-4" style={{ color: "#fff" }}>
               БИЛЕТЫ
             </h2>
             <div className="ornament max-w-xs mx-auto" />
-            <p className="mt-6" style={{ color: "#3D2B1A" }}>
-              Дом офицеров Черноморского флота, ул. Ленина 9, г. Севастополь
-            </p>
           </div>
 
-          {/* Date + CTA */}
-          <div className="flex flex-col items-center gap-8">
-            {/* Единственная дата */}
+          {/* Главный блок — билет */}
+          <div
+            className="relative rounded-3xl overflow-hidden mx-auto"
+            style={{ maxWidth: 860, background: "var(--cream)" }}
+          >
+            {/* Декоративная красная полоса слева */}
             <div
-              className="flex flex-col sm:flex-row items-center gap-6 sm:gap-12 px-10 py-8 rounded-2xl w-full max-w-2xl"
+              className="absolute left-0 top-0 bottom-0 w-2"
+              style={{ background: "var(--red)" }}
+            />
+
+            {/* Перфорация */}
+            <div
+              className="absolute left-0 right-0 flex justify-between px-0 pointer-events-none"
+              style={{ top: "50%", transform: "translateY(-50%)" }}
+            >
+              <div className="w-6 h-6 rounded-full -translate-x-3" style={{ background: "var(--ink)" }} />
+              <div className="w-6 h-6 rounded-full translate-x-3" style={{ background: "var(--ink)" }} />
+            </div>
+            <div
+              className="absolute left-8 right-8"
               style={{
-                background: "var(--ink)",
-                border: "2px solid var(--red)",
+                top: "50%",
+                borderTop: "2px dashed rgba(26,16,8,0.15)",
               }}
-            >
-              <div className="text-center sm:text-left">
-                <p className="nav-link text-xs mb-1" style={{ color: "var(--gold)" }}>ДАТА</p>
-                <div
-                  className="display-title font-bold leading-none"
-                  style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", color: "#fff" }}
-                >
-                  18 августа
+            />
+
+            <div className="grid md:grid-cols-2">
+              {/* Левая часть — дата и место */}
+              <div className="p-8 md:p-10 flex flex-col justify-between" style={{ borderRight: "2px dashed rgba(26,16,8,0.15)" }}>
+                <div>
+                  <p className="nav-link text-xs mb-4" style={{ color: "var(--red)" }}>
+                    СПЕКТАКЛЬ
+                  </p>
+                  <h3
+                    className="section-title font-bold mb-1 leading-tight"
+                    style={{ fontSize: "clamp(1.6rem, 4vw, 2.4rem)", color: "var(--ink)" }}
+                  >
+                    12 СТУЛЬЕВ
+                  </h3>
+                  <p className="text-sm mb-8" style={{ color: "#6B4C30", fontFamily: "'Golos Text', sans-serif" }}>
+                    по роману И. Ильфа и Е. Петрова
+                  </p>
+
+                  <div className="flex gap-6 mb-6">
+                    <div>
+                      <p className="nav-link text-xs mb-1" style={{ color: "var(--red)" }}>ДАТА</p>
+                      <p className="display-title font-bold text-3xl" style={{ color: "var(--ink)" }}>18 августа</p>
+                      <p className="text-sm" style={{ color: "#6B4C30" }}>понедельник</p>
+                    </div>
+                    <div
+                      className="w-px self-stretch"
+                      style={{ background: "rgba(26,16,8,0.12)" }}
+                    />
+                    <div>
+                      <p className="nav-link text-xs mb-1" style={{ color: "var(--red)" }}>НАЧАЛО</p>
+                      <p className="section-title font-bold text-3xl" style={{ color: "var(--red)" }}>19:00</p>
+                      <p className="text-sm" style={{ color: "#6B4C30" }}>без антракта</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-2">
+                    <span className="text-xs mt-0.5" style={{ color: "var(--red)" }}>📍</span>
+                    <div>
+                      <p className="text-sm font-semibold" style={{ color: "var(--ink)" }}>
+                        Дом офицеров Черноморского флота
+                      </p>
+                      <p className="text-xs" style={{ color: "#6B4C30" }}>ул. Ленина 9, г. Севастополь</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-3 mt-8">
+                  <span
+                    className="px-3 py-1 rounded-full text-xs nav-link"
+                    style={{ background: "rgba(200,23,26,0.1)", color: "var(--red)", border: "1px solid var(--red)" }}
+                  >
+                    12+
+                  </span>
+                  <span
+                    className="px-3 py-1 rounded-full text-xs nav-link"
+                    style={{ background: "rgba(26,16,8,0.07)", color: "var(--ink)", border: "1px solid rgba(26,16,8,0.2)" }}
+                  >
+                    2 ч 45 мин
+                  </span>
+                  <span
+                    className="px-3 py-1 rounded-full text-xs nav-link"
+                    style={{ background: "rgba(26,16,8,0.07)", color: "var(--ink)", border: "1px solid rgba(26,16,8,0.2)" }}
+                  >
+                    Гастроли
+                  </span>
                 </div>
               </div>
+
+              {/* Правая часть — цена и кнопка */}
               <div
-                className="hidden sm:block w-px self-stretch"
-                style={{ background: "rgba(201,168,76,0.3)" }}
-              />
-              <div className="text-center sm:text-left">
-                <p className="nav-link text-xs mb-1" style={{ color: "var(--gold)" }}>НАЧАЛО</p>
-                <div
-                  className="section-title font-bold"
-                  style={{ fontSize: "clamp(2rem, 5vw, 3rem)", color: "var(--red)" }}
+                className="p-8 md:p-10 flex flex-col justify-between"
+                style={{ background: "var(--ink)" }}
+              >
+                <div>
+                  <p className="nav-link text-xs mb-4" style={{ color: "var(--gold)" }}>СТОИМОСТЬ БИЛЕТОВ</p>
+                  <div className="flex items-end gap-3 mb-2">
+                    <span
+                      className="display-title font-bold"
+                      style={{ fontSize: "clamp(2.8rem, 6vw, 4.5rem)", color: "#fff", lineHeight: 1 }}
+                    >
+                      1 600
+                    </span>
+                    <span className="text-2xl mb-1 font-light" style={{ color: "rgba(245,237,216,0.5)" }}>₽</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-8">
+                    <div className="h-px flex-1" style={{ background: "rgba(201,168,76,0.3)" }} />
+                    <span className="nav-link text-xs" style={{ color: "var(--gold)" }}>до</span>
+                    <div className="h-px flex-1" style={{ background: "rgba(201,168,76,0.3)" }} />
+                  </div>
+                  <div className="flex items-end gap-3 mb-6">
+                    <span
+                      className="display-title font-bold"
+                      style={{ fontSize: "clamp(2.8rem, 6vw, 4.5rem)", color: "var(--gold)", lineHeight: 1 }}
+                    >
+                      3 500
+                    </span>
+                    <span className="text-2xl mb-1 font-light" style={{ color: "var(--gold-light, #E8C96E)" }}>₽</span>
+                  </div>
+
+                  <p className="text-xs leading-relaxed" style={{ color: "rgba(245,237,216,0.4)" }}>
+                    Партер, амфитеатр, балкон.<br />
+                    Точная стоимость зависит от зоны.
+                  </p>
+                </div>
+
+                <button
+                  className="btn-red w-full py-4 rounded-xl mt-8 text-base flex items-center justify-center gap-2"
                 >
-                  19:00
-                </div>
-              </div>
-              <div
-                className="hidden sm:block w-px self-stretch"
-                style={{ background: "rgba(201,168,76,0.3)" }}
-              />
-              <div className="text-center sm:text-left">
-                <p className="nav-link text-xs mb-1" style={{ color: "var(--gold)" }}>ДЕНЬ</p>
-                <div className="section-title font-bold text-2xl" style={{ color: "#fff" }}>
-                  Понедельник
-                </div>
+                  <span>КУПИТЬ БИЛЕТ</span>
+                  <span style={{ fontSize: "1.1em" }}>→</span>
+                </button>
               </div>
             </div>
-
-            {/* Зоны */}
-            <div className="grid md:grid-cols-3 gap-5 w-full max-w-2xl">
-              {TICKETS.map((t) => (
-                <div
-                  key={t.zone}
-                  className="rounded-xl p-5 text-center"
-                  style={{
-                    background: t.color + "12",
-                    border: `1.5px solid ${t.color}`,
-                  }}
-                >
-                  <div className="section-title text-xs font-bold mb-2" style={{ color: t.color }}>
-                    {t.zone}
-                  </div>
-                  <div className="display-title text-3xl font-bold" style={{ color: "var(--ink)" }}>
-                    {t.price} ₽
-                  </div>
-                  <p className="text-xs mt-1" style={{ color: "#5A3A20" }}>{t.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Кнопка */}
-            <button
-              className="btn-red px-16 py-5 rounded-xl text-lg"
-              style={{ letterSpacing: "0.12em" }}
-            >
-              КУПИТЬ БИЛЕТ
-            </button>
           </div>
+
         </div>
       </section>
 
