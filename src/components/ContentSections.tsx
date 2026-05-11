@@ -277,74 +277,79 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
             </p>
           </div>
 
-          {/* Dates */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {[
-              { date: "15 июня", day: "Пятница", time: "19:00" },
-              { date: "16 июня", day: "Суббота", time: "19:00" },
-              { date: "22 июня", day: "Пятница", time: "19:00" },
-              { date: "23 июня", day: "Суббота", time: "14:00" },
-            ].map((d) => (
-              <button
-                key={d.date}
-                className="rounded-xl p-4 text-center border-2 transition-all hover:scale-105"
-                style={{
-                  borderColor: "var(--red)",
-                  background: "rgba(200,23,26,0.05)",
-                }}
-              >
+          {/* Date + CTA */}
+          <div className="flex flex-col items-center gap-8">
+            {/* Единственная дата */}
+            <div
+              className="flex flex-col sm:flex-row items-center gap-6 sm:gap-12 px-10 py-8 rounded-2xl w-full max-w-2xl"
+              style={{
+                background: "var(--ink)",
+                border: "2px solid var(--red)",
+              }}
+            >
+              <div className="text-center sm:text-left">
+                <p className="nav-link text-xs mb-1" style={{ color: "var(--gold)" }}>ДАТА</p>
                 <div
-                  className="section-title text-xl font-bold mb-1"
-                  style={{ color: "var(--red)" }}
+                  className="display-title font-bold leading-none"
+                  style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", color: "#fff" }}
                 >
-                  {d.date}
-                </div>
-                <div className="text-sm" style={{ color: "#3D2B1A" }}>
-                  {d.day}
-                </div>
-                <div
-                  className="text-sm font-semibold mt-1"
-                  style={{ color: "var(--ink)" }}
-                >
-                  {d.time}
-                </div>
-              </button>
-            ))}
-          </div>
-
-          {/* Zones */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {TICKETS.map((t) => (
-              <div
-                key={t.zone}
-                className="ticket-card rounded-xl overflow-hidden"
-                style={{ border: "2px solid", borderColor: t.color }}
-              >
-                <div className="p-6" style={{ background: t.color + "15" }}>
-                  <div
-                    className="section-title text-sm font-bold mb-2"
-                    style={{ color: t.color }}
-                  >
-                    {t.zone}
-                  </div>
-                  <div
-                    className="display-title text-4xl font-bold mb-1"
-                    style={{ color: "var(--ink)" }}
-                  >
-                    {t.price} ₽
-                  </div>
-                  <p className="text-sm mb-6" style={{ color: "#3D2B1A" }}>
-                    {t.desc}
-                  </p>
-                  <button
-                    className="w-full py-3 rounded-lg font-semibold text-white section-title text-sm tracking-widest transition-all hover:opacity-90 hover:-translate-y-0.5"
-                    style={{ background: t.color }}
-                  >
-                    ВЫБРАТЬ
-                  </button>
+                  18 августа
                 </div>
               </div>
-            ))}
+              <div
+                className="hidden sm:block w-px self-stretch"
+                style={{ background: "rgba(201,168,76,0.3)" }}
+              />
+              <div className="text-center sm:text-left">
+                <p className="nav-link text-xs mb-1" style={{ color: "var(--gold)" }}>НАЧАЛО</p>
+                <div
+                  className="section-title font-bold"
+                  style={{ fontSize: "clamp(2rem, 5vw, 3rem)", color: "var(--red)" }}
+                >
+                  19:00
+                </div>
+              </div>
+              <div
+                className="hidden sm:block w-px self-stretch"
+                style={{ background: "rgba(201,168,76,0.3)" }}
+              />
+              <div className="text-center sm:text-left">
+                <p className="nav-link text-xs mb-1" style={{ color: "var(--gold)" }}>ДЕНЬ</p>
+                <div className="section-title font-bold text-2xl" style={{ color: "#fff" }}>
+                  Понедельник
+                </div>
+              </div>
+            </div>
+
+            {/* Зоны */}
+            <div className="grid md:grid-cols-3 gap-5 w-full max-w-2xl">
+              {TICKETS.map((t) => (
+                <div
+                  key={t.zone}
+                  className="rounded-xl p-5 text-center"
+                  style={{
+                    background: t.color + "12",
+                    border: `1.5px solid ${t.color}`,
+                  }}
+                >
+                  <div className="section-title text-xs font-bold mb-2" style={{ color: t.color }}>
+                    {t.zone}
+                  </div>
+                  <div className="display-title text-3xl font-bold" style={{ color: "var(--ink)" }}>
+                    {t.price} ₽
+                  </div>
+                  <p className="text-xs mt-1" style={{ color: "#5A3A20" }}>{t.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Кнопка */}
+            <button
+              className="btn-red px-16 py-5 rounded-xl text-lg"
+              style={{ letterSpacing: "0.12em" }}
+            >
+              КУПИТЬ БИЛЕТ
+            </button>
           </div>
         </div>
       </section>
