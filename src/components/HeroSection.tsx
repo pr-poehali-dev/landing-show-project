@@ -113,7 +113,7 @@ export default function HeroSection({ heroVisible, scrollTo, onVideoOpen }: Hero
               </div>
               <button
                 className="btn-gold px-8 py-4 text-base rounded flex items-center gap-2"
-                onClick={onVideoOpen}
+                onClick={() => document.querySelector('#gallery')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Icon name="Play" size={18} />
                 Смотреть трейлер
