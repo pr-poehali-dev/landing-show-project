@@ -376,6 +376,7 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
                   icon: "MapPin",
                   title: "Адрес",
                   text: "ул. Ленина 9, г. Севастополь\nДом офицеров Черноморского флота",
+                  href: "https://yandex.ru/maps/?text=Севастополь+ул.+Ленина+9+Дом+офицеров+Черноморского+флота",
                 },
                 {
                   icon: "Phone",
@@ -407,12 +408,27 @@ export default function ContentSections({ onLightbox, onVideoOpen }: ContentSect
                     >
                       {c.title}
                     </p>
-                    <p
-                      className="text-sm leading-relaxed"
-                      style={{ color: "rgba(245,237,216,0.8)", whiteSpace: "pre-line" }}
-                    >
-                      {c.text}
-                    </p>
+                    {"href" in c ? (
+                      <a
+                        href={c.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm leading-relaxed hover:underline"
+                        style={{ color: "rgba(245,237,216,0.8)", whiteSpace: "pre-line", display: "block" }}
+                      >
+                        {c.text}
+                        <span className="block text-xs mt-1" style={{ color: "var(--gold)" }}>
+                          Открыть на карте →
+                        </span>
+                      </a>
+                    ) : (
+                      <p
+                        className="text-sm leading-relaxed"
+                        style={{ color: "rgba(245,237,216,0.8)", whiteSpace: "pre-line" }}
+                      >
+                        {c.text}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
