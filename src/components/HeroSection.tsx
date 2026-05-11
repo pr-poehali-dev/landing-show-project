@@ -230,27 +230,18 @@ export default function HeroSection({ heroVisible, scrollTo, onVideoOpen }: Hero
 
             {/* Video block */}
             <div
-              className="relative rounded-xl overflow-hidden cursor-pointer group"
+              className="relative rounded-xl overflow-hidden"
               style={{ aspectRatio: "16/9", background: "#1A1008" }}
-              onClick={onVideoOpen}
             >
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=450&fit=crop"
-                alt="Трейлер"
-                className="w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity"
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://vkvideo.ru/video_ext.php?oid=1107808138&id=456239020&hd=2"
+                title="Трейлер спектакля 12 стульев"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
-                  style={{
-                    background: "var(--red)",
-                    boxShadow: "0 0 30px rgba(200,23,26,0.6)",
-                  }}
-                >
-                  <Icon name="Play" size={32} className="text-white ml-1" />
-                </div>
-                <p className="nav-link text-white text-sm">СМОТРЕТЬ ТРЕЙЛЕР</p>
-              </div>
             </div>
           </div>
         </div>
