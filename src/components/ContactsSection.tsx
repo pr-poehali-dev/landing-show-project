@@ -40,7 +40,7 @@ export default function ContactsSection() {
                 {
                   icon: "Mail",
                   title: "Email",
-                  text: "info@theatre-sev.ru",
+                  text: "indigo_fest@mail.ru",
                 },
                 {
                   icon: "Clock",
