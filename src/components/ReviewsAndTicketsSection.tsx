@@ -214,7 +214,7 @@ export default function ReviewsAndTicketsSection() {
                     <div>
                       <p className="nav-link text-xs mb-1" style={{ color: "var(--red)" }}>НАЧАЛО</p>
                       <p className="section-title font-bold text-3xl" style={{ color: "var(--red)" }}>19:00</p>
-                      <p className="text-sm" style={{ color: "#6B4C30" }}>без антракта</p>
+                      <p className="text-sm" style={{ color: "#6B4C30" }}>с одним антректом</p>
                     </div>
                   </div>
 
