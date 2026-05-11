@@ -219,11 +219,11 @@ export default function HeroSection({ heroVisible, scrollTo, onVideoOpen }: Hero
                 по всей стране в погоне за сокровищем.
               </p>
               <p
-                className="text-lg leading-relaxed"
+                className="text-lg leading-relaxed mb-6"
                 style={{ color: "#3D2B1A" }}
               >Острая сатира на советский быт, галерея незабываемых персонажей и блистательные диалоги Ильфа и Петрова оживают на сцене в полную силу.</p>
               <p
-                className="text-lg leading-relaxed"
+                className="text-lg leading-relaxed mb-6"
                 style={{ color: "#3D2B1A" }}
               >Вас ждут: яркие персонажи, азарт, любовь, волнующий джаз, чувственное танго, стильные костюмы и декорации! Лёд тронулся, господа присяжные заседатели! Вы никогда не будете лишним на этом празднике жизни!</p>
             </div>
