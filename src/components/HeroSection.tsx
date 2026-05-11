@@ -95,7 +95,7 @@ export default function HeroSection({ heroVisible, scrollTo, onVideoOpen }: Hero
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <div className="relative inline-block">
+              <div className="relative inline-block pb-3 pr-3">
                 <a
                   href="https://iframeab-pre11992.intickets.ru/seance/72243185/"
                   target="_blank"
@@ -105,7 +105,7 @@ export default function HeroSection({ heroVisible, scrollTo, onVideoOpen }: Hero
                   Купить билет
                 </a>
                 <span
-                  className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded text-xs font-semibold"
+                  className="absolute bottom-0 right-0 px-2 py-0.5 rounded text-xs font-semibold"
                   style={{ background: "var(--gold)", color: "var(--ink)", fontFamily: "'Oswald', sans-serif", letterSpacing: "0.05em", whiteSpace: "nowrap" }}
                 >
                   без комиссии
