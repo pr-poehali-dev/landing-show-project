@@ -77,7 +77,7 @@ export default function ReviewsAndTicketsSection() {
             <div className="ornament max-w-xs mx-auto" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 min-h-[260px]">
+          <div className="grid md:grid-cols-3 gap-6 min-h-[260px]" translate="no">
             {visible.map((r) => (
               <div
                 key={r.author + r.date}
