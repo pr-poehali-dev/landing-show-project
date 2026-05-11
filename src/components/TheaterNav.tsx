@@ -45,22 +45,14 @@ export default function TheaterNav({ scrolled, menuOpen, setMenuOpen, scrollTo }
               {item.label}
             </button>
           ))}
-          <div className="relative inline-block">
-            <a
-              href="https://iframeab-pre11992.intickets.ru/seance/72243185/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-red px-4 py-2 text-sm font-semibold rounded"
-            >
-              Купить билет
-            </a>
-            <span
-              className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded text-xs font-semibold"
-              style={{ background: "var(--gold)", color: "var(--ink)", fontFamily: "'Oswald', sans-serif", letterSpacing: "0.05em", whiteSpace: "nowrap" }}
-            >
-              без комиссии
-            </span>
-          </div>
+          <a
+            href="https://iframeab-pre11992.intickets.ru/seance/72243185/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-red px-4 py-2 text-sm font-semibold rounded"
+          >
+            Купить билет
+          </a>
         </div>
 
         {/* Mobile burger */}
