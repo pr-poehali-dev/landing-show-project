@@ -1,12 +1,11 @@
 import Icon from "@/components/ui/icon";
 
 const GALLERY_IMGS = [
-  "https://images.unsplash.com/photo-1503095396549-807759245b35?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1541976590-713941681591?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+  "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/8b7904e5-a528-4c58-82e2-3eebc6cd4cde.jpg",
+  "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/8901fb08-984b-48ba-aa96-6152fb784ed3.jpg",
+  "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/27e32660-81b4-4bc5-b2dc-5a3c3d3d1e62.jpg",
+  "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/024a14d3-ca78-48b6-8ec8-c61cd61ed84c.jpg",
+  "https://cdn.poehali.dev/projects/65a0d195-7b65-4362-ab9b-02d1c8ca4d32/bucket/41569933-d78b-4de0-9000-dd6f85ae22c8.jpg",
 ];
 
 interface GallerySectionProps {
