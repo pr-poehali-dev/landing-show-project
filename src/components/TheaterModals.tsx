@@ -37,9 +37,9 @@ export default function TheaterModals({
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+              src="https://vkvideo.ru/video_ext.php?oid=1107808138&id=456239018&hd=2&autoplay=1"
               title="Трейлер спектакля 12 стульев"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
               allowFullScreen
               className="w-full h-full"
             />
