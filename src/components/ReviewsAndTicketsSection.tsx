@@ -139,7 +139,7 @@ export default function ReviewsAndTicketsSection() {
                     <div>
                       <p className="nav-link text-xs mb-1" style={{ color: "var(--red)" }}>ДАТА</p>
                       <p className="display-title font-bold text-3xl" style={{ color: "var(--ink)" }}>18 августа</p>
-                      <p className="text-sm" style={{ color: "#6B4C30" }}>понедельник</p>
+                      <p className="text-sm" style={{ color: "#6B4C30" }}>вторник</p>
                     </div>
                     <div
                       className="w-px self-stretch"
